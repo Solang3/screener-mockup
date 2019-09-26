@@ -1,6 +1,6 @@
 import React from 'react'
 import { Link } from 'react-router-dom'
-import { Icon, Menu, Layout } from 'antd';
+import { Icon, Menu, Layout, Switch } from 'antd';
 
 const { Sider } = Layout;
 
@@ -38,8 +38,10 @@ class AppSider extends React.Component {
               <Icon type="play-circle" />
               Orders</Link>
           </Menu.Item>
+          <Menu.Item className="switch-theme">
+            <Switch checkedChildren="Dark" unCheckedChildren="Light" />
+          </Menu.Item>
         </Menu>
-
       </Sider>
     )
   }
