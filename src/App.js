@@ -5,8 +5,7 @@ import { Layout } from 'antd';
 import AppHeader from './AppHeader'
 import Home from './components/Home/Home'
 import AppSider from './AppSider'
-import Wallets from './components/Wallets/Wallets'
-import Alarms from './components/Alarms/Alarms'
+import AlarmCards from './components/Alarms/AlarmCards'
 import Orders from './components/Orders/Orders'
 import WalletCards from './components/Wallets/WalletCards'
 import { BrowserRouter, Route, Switch } from 'react-router-dom'
@@ -38,7 +37,7 @@ class App extends React.Component {
                 <Switch>
                   <Route path="/" exact component={Home} />
                   <Route path="/wallets" component={WalletCards} />
-                  <Route path="/alarms" component={Alarms} />
+                  <Route path="/alarms" component={AlarmCards} />
                   <Route path="/orders" component={Orders} />
                 </Switch>
               </Content>
