@@ -1,0 +1,22 @@
+.red-line {
+  color: red
+}
+.green-line {
+  color: green
+}
+
+.full-height {
+  min-height: 100vh !important
+}
+
+/*
+La vieja y buena piedra
+*/
+
+.red-border {
+  border: 2px red solid
+}
+
+.green-border {
+  border: 2px greenyellow solid
+}
