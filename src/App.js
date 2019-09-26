@@ -15,10 +15,6 @@ class App extends React.Component {
 
   state = { collapsed: false, theme: 'light' };
 
-  constructor(props) {
-    super(props)
-
-  }
   toggle = () => {
     this.setState({
       collapsed: !this.state.collapsed,
@@ -36,8 +32,8 @@ class App extends React.Component {
           <Layout className="full-height">
             <AppSider collapsed={this.state.collapsed} onCollapsed={this.toggle} theme={this.state.theme} onThemeChange={this.onThemeChange}/>
             <Layout>
-              <AppHeader collapsed={this.state.collapsed} toggle={this.toggle} />
-              <Content style={{ padding: 10 }}>
+              <AppHeader collapsed={this.state.collapsed} toggle={this.toggle} theme={this.state.theme} />
+              <Content style={{ padding: 10 }} className={this.state.theme}>
                 <Switch>
                   <Route path="/" exact component={Home} />
                   <Route path="/wallets" component={WalletCards} />
