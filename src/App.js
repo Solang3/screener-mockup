@@ -13,7 +13,7 @@ const { Content } = Layout;
 
 class App extends React.Component {
 
-  state = { collapsed: false };
+  state = { collapsed: false, theme: 'light' };
 
   constructor(props) {
     super(props)
@@ -24,13 +24,17 @@ class App extends React.Component {
       collapsed: !this.state.collapsed,
     });
   }
+  onThemeChange = () => {
+    this.setState({theme: this.state.theme === 'light' ?  'dark' : 'light'})
+    console.log(this.state.theme)
+  }
   render() {
 
     return (
       <div className="App">
         <BrowserRouter>
           <Layout className="full-height">
-            <AppSider collapsed={this.state.collapsed} onCollapsed={this.toggle} />
+            <AppSider collapsed={this.state.collapsed} onCollapsed={this.toggle} theme={this.state.theme} onThemeChange={this.onThemeChange}/>
             <Layout>
               <AppHeader collapsed={this.state.collapsed} toggle={this.toggle} />
               <Content style={{ padding: 10 }}>

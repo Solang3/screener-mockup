@@ -7,7 +7,7 @@ const { Sider } = Layout;
 class AppSider extends React.Component {
 
   render() {
-    const { collapsed, onCollapse } = this.props
+    const { collapsed, onCollapse, theme, onThemeChange } = this.props
     return (
       <Sider
         breakpoint="lg"
@@ -17,8 +17,9 @@ class AppSider extends React.Component {
         collapsible
         collapsed={collapsed}
         onCollapse={onCollapse}
+        theme={theme}
       >
-        <Menu mode="inline" defaultSelectedKeys="1">
+        <Menu mode="inline" defaultSelectedKeys="1" theme={theme}>
           <Menu.Item key="1">
             <Link className="nav-text" href="#" to="/" title="Home">
               <Icon type="home" />Home</Link>
@@ -39,7 +40,7 @@ class AppSider extends React.Component {
               Orders</Link>
           </Menu.Item>
           <Menu.Item className="switch-theme">
-            <Switch checkedChildren="Dark" unCheckedChildren="Light" />
+            <Switch checkedChildren="Dark" unCheckedChildren="Light" onChange={onThemeChange} />
           </Menu.Item>
         </Menu>
       </Sider>
