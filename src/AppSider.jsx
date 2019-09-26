@@ -1,6 +1,7 @@
 import React from 'react'
 import { Link } from 'react-router-dom'
 import { Icon, Menu, Layout, Switch } from 'antd';
+import './AppSider.css';
 
 const { Sider } = Layout;
 
