@@ -1,7 +1,8 @@
 import React from 'react';
 import 'antd/dist/antd.css';
 import './App.css';
-import { Layout, PageHeader } from 'antd';
+import { Layout } from 'antd';
+import AppHeader from './AppHeader'
 import Home from './components/Home/Home'
 import Drawer from './components/Drawer/Drawer'
 import Wallets from './components/Wallets/Wallets'
@@ -9,7 +10,7 @@ import Alarms from './components/Alarms/Alarms'
 import Orders from './components/Orders/Orders'
 import WalletCards from './components/Wallets/WalletCards'
 import { BrowserRouter, Route, Switch } from 'react-router-dom'
-const { Header, Content } = Layout;
+const { Content } = Layout;
 
 class App extends React.Component {
   constructor(props) {
@@ -29,11 +30,8 @@ class App extends React.Component {
           <Layout className="full-height">
             <Drawer />
             <Layout>
-              <Header style={{ background: '#fff' }}>
-                <h1>version 1</h1>
-                
-              </Header>
-              <Content style={{padding:10}}>
+              <AppHeader />
+              <Content style={{ padding: 10 }}>
                 <Switch>
                   <Route path="/" exact component={Home} />
                   <Route path="/wallets" component={WalletCards} />
