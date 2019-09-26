@@ -4,13 +4,10 @@ import { Icon, Menu, Layout } from 'antd';
 
 const { Sider } = Layout;
 
-class Drawer extends React.Component {
-  constructor(props) {
-    super(props)
-
-  }
+class AppSider extends React.Component {
 
   render() {
+    const { collapsed, onCollapse } = this.props
     return (
       <Sider
         breakpoint="lg"
@@ -18,7 +15,8 @@ class Drawer extends React.Component {
         width="200"
         trigger={null}
         collapsible
-
+        collapsed={collapsed}
+        onCollapse={onCollapse}
       >
         <Menu mode="inline" defaultSelectedKeys="1">
           <Menu.Item key="1">
@@ -47,4 +45,4 @@ class Drawer extends React.Component {
   }
 }
 
-export default Drawer
+export default AppSider

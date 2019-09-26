@@ -4,7 +4,7 @@ import './App.css';
 import { Layout } from 'antd';
 import AppHeader from './AppHeader'
 import Home from './components/Home/Home'
-import Drawer from './components/Drawer/Drawer'
+import AppSider from './AppSider'
 import Wallets from './components/Wallets/Wallets'
 import Alarms from './components/Alarms/Alarms'
 import Orders from './components/Orders/Orders'
@@ -13,6 +13,9 @@ import { BrowserRouter, Route, Switch } from 'react-router-dom'
 const { Content } = Layout;
 
 class App extends React.Component {
+
+  state = { collapsed: false };
+
   constructor(props) {
     super(props)
 
@@ -28,9 +31,9 @@ class App extends React.Component {
       <div className="App">
         <BrowserRouter>
           <Layout className="full-height">
-            <Drawer />
+            <AppSider collapsed={this.state.collapsed} onCollapsed={this.toggle} />
             <Layout>
-              <AppHeader />
+              <AppHeader collapsed={this.state.collapsed} toggle={this.toggle} />
               <Content style={{ padding: 10 }}>
                 <Switch>
                   <Route path="/" exact component={Home} />
